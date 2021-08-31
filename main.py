@@ -8,6 +8,9 @@ from instapy import smart_run
 from dotenv import load_dotenv
 import os
 
+#files
+from follow import follow
+from comment import comment
 
 load_dotenv()
 # login credentials
@@ -19,10 +22,6 @@ session = InstaPy(username=insta_username,
                   password=insta_password,
                   headless_browser=False)
 
-with smart_run(session):
-    """ Activity flow """
-    #settings
-    session.set_relationship_bounds(enabled=True, delimit_by_numbers=True, max_followers= 5000, min_followers=50, min_following=50)
+follow(session, "kanyewest")
 
-    #activities
-    session.follow_user_followers(['kanyewest'], amount=1000, randomize=False, interact=False)
+
