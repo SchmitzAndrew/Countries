@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 300%;
+    text-align: center;
+}
+
+/*Gradient for the Titles */
+.title-gradient{
+    /* Fallback: Set a background color. */
+    background-color: teal;
+
+    background: linear-gradient(270deg, #3ba4c6, #3bc643, #15e3f3, #e7a91f);
+    background-size: 1000% 1000%;
+    background-repeat: repeat;
+
+    -webkit-animation: title-gradient 21s ease infinite;
+    -moz-animation: title-gradient 21s ease infinite;
+    animation: title-gradient 21s ease infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+@-webkit-keyframes title-gradient {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes title-gradient {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes title-gradient {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+/*Navbar*/
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    display: inline-block;
+    padding: 5px;
+}
+
+a:hover, li:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}

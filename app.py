@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 
 # additional libraries
 import pandas as pd
@@ -10,19 +10,19 @@ from data import clean
 # loading the df
 countries = pd.read_csv("countries.csv")
 countries = clean(countries)
-print(countries.loc["Albania"]["Population"])
 
-#App
+# App
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():  # put application's code here
-    return '<h1>Welcome to the country database explorer.  </h1> <h2>There are ' + str(countries.shape[0]) + ' countries in the world<h2>'
+    return render_template('index.html')
+
 
 # Displays infromation about one country
 @app.route('/<name>')
 def country_info(name):
-
     return '<h1>' + name + ': </h1> <h2> Population: ' + str(countries.loc[name]["Population"])
 
 
